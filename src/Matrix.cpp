@@ -1,4 +1,5 @@
 #include <Matrix.hpp>
+
 #include <iostream>
 
 Matrix::Matrix(const std::vector<std::vector<int>> matrix) : m_matrix{matrix} {};
@@ -13,4 +14,8 @@ const void Matrix::printMatrix() const
         }
         std::cout << std::endl;
     }
+}
+
+int Matrix::at(const int &row, const int &column) {
+    return m_matrix.at(row).at(column);
 }
