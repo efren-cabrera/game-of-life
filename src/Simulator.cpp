@@ -14,7 +14,7 @@ namespace GameOfLife {
                 auto neighbors{m_actual.getNeighbors(r, c)};
                 auto liveNeighbors = std::accumulate(neighbors.begin(), neighbors.end(), 0);
                 auto state{0};
-                if (liveNeighbors > m_neighborsThreshold) {
+                if (liveNeighbors >= m_neighborsThreshold) {
                     state = 1;
                 }
                 newState[r].push_back(state);
