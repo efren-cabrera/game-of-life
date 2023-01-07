@@ -5,6 +5,6 @@
 namespace GameOfLife {
     class OutputHelper {
     public:
-        void operator<<(const Internal::Matrix &matrix);
+        virtual void operator<<(const Internal::Matrix &matrix) = 0;
     };
 }
