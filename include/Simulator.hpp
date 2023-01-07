@@ -8,5 +8,6 @@ namespace GameOfLife {
         Internal::Matrix getCurrentState();
     private:
         Internal::Matrix m_actual;
+        const int m_neighborsThreshold{3};
     };
 }
