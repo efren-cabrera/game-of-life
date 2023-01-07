@@ -2,7 +2,8 @@
 #include <vector>
 #include <utility>
 
-namespace GameOfLife::Internal {
+namespace GameOfLife::Internal
+{
     class Matrix
     {
     public:
@@ -11,6 +12,7 @@ namespace GameOfLife::Internal {
         const std::vector<std::vector<int>> getData() const;
         const std::vector<int> getNeighbors(const int &row, const int &column) const;
         const std::pair<int, int> getSize() const { return size; }
+
     private:
         std::vector<std::vector<int>> m_matrix;
         std::pair<int, int> size;
