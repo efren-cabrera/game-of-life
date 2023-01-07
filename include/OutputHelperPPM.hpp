@@ -1,5 +1,4 @@
 #pragma once
-#include <iostream>
 #include <Matrix.hpp>
 #include <OutputHelper.hpp>
 #include <string>

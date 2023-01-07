@@ -2,17 +2,21 @@
 #include <Matrix.hpp>
 #include <OutputHelperConsole.hpp>
 
-namespace GameOfLife {
-    void OutputHelperConsole::operator<<(const Internal::Matrix &matrix) {
+namespace GameOfLife
+{
+    void OutputHelperConsole::operator<<(const Internal::Matrix &matrix)
+    {
         for (auto &row : matrix.getData())
         {
             std::cout << "|";
             for (auto value : row)
             {
-                if (value == 0) {
+                if (value == 0)
+                {
                     std::cout << " ";
                 }
-                else {
+                else
+                {
                     std::cout << "█";
                 }
             }
