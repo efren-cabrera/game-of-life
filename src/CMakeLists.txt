@@ -1,1 +1,1 @@
-add_library(Matrix STATIC Matrix.cpp Simulator.cpp OutputHelperConsole.cpp)
+add_library(Matrix STATIC Matrix.cpp Simulator.cpp OutputHelperConsole.cpp OutputHelperPPM.cpp)
