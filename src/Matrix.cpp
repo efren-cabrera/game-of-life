@@ -41,14 +41,15 @@ namespace GameOfLife::Internal
         {
             columns.push_back(column + 1);
         }
-        for (int r{0}; r <= rows.size(); r++)
+        for (auto &r : rows)
         {
-            for (int c{0}; c <= columns.size(); c++)
+            for (auto &c : columns)
             {
-                if (r != row && c != column)
+                if (r == row && c == column)
                 {
-                    out.push_back(this->at(rows[r], columns[c]));
+                    continue;
                 }
+                out.push_back(this->at(r, c));
             }
         }
         return out;
