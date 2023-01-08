@@ -20,7 +20,7 @@ namespace GameOfLife::Utils
             for (int c{0}; c < nColumns; c++)
             {
                 auto number = m_distribution(m_engine);
-                if (number < 51)
+                if (number < 95)
                 {
                     out[r].push_back(0);
                 }
