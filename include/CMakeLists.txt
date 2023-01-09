@@ -1,1 +1,1 @@
-target_include_directories(Matrix PUBLIC "./")
+target_include_directories(GameofLifeInternal PUBLIC "./")

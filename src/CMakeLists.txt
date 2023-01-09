@@ -1,1 +1,1 @@
-add_library(Matrix STATIC Matrix.cpp Simulator.cpp OutputHelperConsole.cpp OutputHelperPPM.cpp MatrixInitializer.cpp)
+add_library(GameofLifeInternal STATIC Matrix.cpp Simulator.cpp OutputHelperConsole.cpp OutputHelperPPM.cpp MatrixInitializer.cpp)
