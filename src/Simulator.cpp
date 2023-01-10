@@ -68,7 +68,7 @@ namespace GameOfLife
             for (int c{0}; c < m_actual.getData()[r].size(); c++)
             {
                 auto neighbors{m_actual.getNeighbors(r, c)};
-                auto liveNeighbors = std::accumulate(neighbors.begin(), neighbors.end(), 0);
+                auto liveNeighbors = std::reduce(neighbors.begin(), neighbors.end(), 0);
                 auto state{0};
                 if (liveNeighbors >= m_neighborsThreshold)
                 {
