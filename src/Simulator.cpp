@@ -68,11 +68,24 @@ namespace GameOfLife
             for (int c{0}; c < m_actual.getData()[r].size(); c++)
             {
                 auto neighbors{m_actual.getNeighbors(r, c)};
+                auto currentState{m_actual.getData()[r][c]};
                 auto liveNeighbors = std::reduce(neighbors.begin(), neighbors.end(), 0);
                 auto state{0};
-                if (liveNeighbors >= m_neighborsThreshold)
+                // Is a live cell
+                if (currentState == 1)
                 {
-                    state = 1;
+                    if (liveNeighbors >= m_neighborsThreshold && liveNeighbors <= m_neighborsThresholdMax)
+                    {
+                        state = 1;
+                    }
+                }
+                // Is a dead cell
+                else
+                {
+                    if (liveNeighbors == m_neighborsThresholdMax)
+                    {
+                        state = 1;
+                    }
                 }
                 newState[r].push_back(state);
             }
