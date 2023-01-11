@@ -12,10 +12,11 @@
 int main()
 {
     GameOfLife::Utils::MatrixInitializer init{};
-    auto rows{600};
-    auto columns{800};
-    
-    GameOfLife::Internal::Matrix initialStateMatrix{init.createMatrix(rows, columns)};
+    auto rows{150};
+    auto columns{200};
+    auto percentageOfDeathCells = .96;
+
+    GameOfLife::Internal::Matrix initialStateMatrix{init.createMatrix(rows, columns, percentageOfDeathCells)};
     GameOfLife::Simulator simulator = GameOfLife::Simulator(initialStateMatrix);
     GameOfLife::OutputHelper *outPPM = new GameOfLife::OutputHelperPPM("out/test");
 
