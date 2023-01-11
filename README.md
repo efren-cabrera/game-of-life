@@ -3,7 +3,18 @@
 
 ## ![ezgif com-gif-maker (5)](https://user-images.githubusercontent.com/13933998/211692781-4469e5fe-8247-4dee-901b-fa93d251aaed.gif) Compile 
 
-You need to have cmake installed, How to build
+You need to have cmake installed.
+
+* How to test
+  
+```bash
+mkdir buil && cd build
+cmake ..
+cmake --build . 
+ctest --output-on-failure
+```
+
+* How to build
 
 ```bash
 mkdir buil && cd build
