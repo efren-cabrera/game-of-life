@@ -8,7 +8,7 @@ You need to have cmake installed.
 * How to test
   
 ```bash
-mkdir buil && cd build
+mkdir build && cd build
 cmake ..
 cmake --build . 
 ctest --output-on-failure
@@ -17,7 +17,7 @@ ctest --output-on-failure
 * How to build
 
 ```bash
-mkdir buil && cd build
+mkdir build && cd build
 cmake ..
 cmake --build . 
 ./app/GameOfLife
