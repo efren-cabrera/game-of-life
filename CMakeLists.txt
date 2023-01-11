@@ -10,3 +10,5 @@ project(GameOfLife VERSION 1.0.0 LANGUAGES CXX)
 add_subdirectory(src)
 add_subdirectory(app)
 add_subdirectory(include)
+
+add_subdirectory(tests)
