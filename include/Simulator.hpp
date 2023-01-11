@@ -12,7 +12,8 @@ namespace GameOfLife
 
     private:
         Internal::Matrix m_actual;
-        const int m_neighborsThreshold{3};
+        const int m_neighborsThreshold{2};
+        const int m_neighborsThresholdMax{3};
         void processBlock(std::vector<int> block, std::vector<std::vector<int>> &state);
     };
 }
