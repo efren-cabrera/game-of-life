@@ -20,4 +20,4 @@ jobs:
         sourcedir: '.'
         builddir: 'build'
         cmakeoptions: '--config Release'
-        ctestoptions: ''
+        ctestoptions: '--test-dir build'
