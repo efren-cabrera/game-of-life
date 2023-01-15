@@ -3,8 +3,7 @@
 #include <numeric>
 #include <thread>
 #include <utility>
-#include <iostream>
-#include <stdexcept>
+#include <execution>
 
 namespace GameOfLife
 {
@@ -34,7 +33,6 @@ namespace GameOfLife
 			{
 				if (rowIndex > 0)
 				{
-					std::cout << rowIndex << ". Starting new thread" << std::endl;
 					threads.push_back(std::thread([this, rowsBlock, &newState]
 						{ this->processBlock(rowsBlock, newState); }));
 				}
@@ -45,11 +43,9 @@ namespace GameOfLife
 		}
 		if (rowsBlock.size() > 0)
 		{
-			std::cout << ". Starting new thread" << std::endl;
 			threads.push_back(std::thread([this, rowsBlock, &newState]
 				{ this->processBlock(rowsBlock, std::ref(newState)); }));
 		}
-		std::cout << "Start joining threads" << std::endl;
 		for (auto& thread : threads)
 		{
 			if (thread.joinable())
@@ -57,7 +53,6 @@ namespace GameOfLife
 				thread.join();
 			}
 		}
-		std::cout << "All threads end" << std::endl;
 		m_actual = newState;
 	}
 
@@ -67,35 +62,25 @@ namespace GameOfLife
 		{
 			for (int columnIndex{ 0 }; columnIndex < m_actual.getSize().second; columnIndex++)
 			{
-				try {
-					auto neighbors{ m_actual.getNeighbors(rowIndex, columnIndex) };
-					auto currentState{ m_actual.getData()[rowIndex][columnIndex] };
-					auto liveNeighbors = std::reduce(neighbors.begin(), neighbors.end(), 0);
-					auto state{ 0 };
-					if (currentState == 1)
-					{
-						if (liveNeighbors >= m_neighborsThreshold && liveNeighbors <= m_neighborsThresholdMax)
-						{
-							state = 1;
-						}
-					}
-					else
-					{
-						if (liveNeighbors == m_neighborsThresholdMax)
-						{
-							state = 1;
-						}
-					}
-					newState[rowIndex].push_back(state);
-				}
-				catch (const std::out_of_range& oor)
+				auto neighbors{ m_actual.getNeighbors(rowIndex, columnIndex) };
+				auto currentState{ m_actual.getData()[rowIndex][columnIndex] };
+				auto liveNeighbors = std::reduce(std::execution::par_unseq, neighbors.begin(), neighbors.end(), 0);
+				auto state{ 0 };
+				if (currentState == 1)
 				{
-					std::cout << "*********************" << std::endl;
-					std::cout << rowIndex << " " << columnIndex << std::endl;
-					auto currentState{ m_actual.getData()[rowIndex][columnIndex] };
-					std::cout << currentState << std::endl;
-					std::cout << "*********************" << std::endl;
+					if (liveNeighbors >= m_neighborsThreshold && liveNeighbors <= m_neighborsThresholdMax)
+					{
+						state = 1;
+					}
 				}
+				else
+				{
+					if (liveNeighbors == m_neighborsThresholdMax)
+					{
+						state = 1;
+					}
+				}
+				newState[rowIndex].push_back(state);
 			}
 		}
 
