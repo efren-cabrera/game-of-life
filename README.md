@@ -1,5 +1,6 @@
 # ![ezgif com-gif-maker (6)](https://user-images.githubusercontent.com/13933998/211692798-dc7fe512-590b-481a-9f6c-5ced719f3641.gif) Game of life
 
+Personal implmentation of [Game of Life  game of John Horton Conway](https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life). This project is planned to be used to compare performance when using GPU.
 
 ## ![ezgif com-gif-maker (5)](https://user-images.githubusercontent.com/13933998/211692781-4469e5fe-8247-4dee-901b-fa93d251aaed.gif) Compile 
 
