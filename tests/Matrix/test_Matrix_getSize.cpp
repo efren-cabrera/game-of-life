@@ -5,6 +5,7 @@
 #include <iostream>
 #include <vector>
 #include <Matrix.hpp>
+#include <cassert>
 
 int main()
 {
