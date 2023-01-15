@@ -26,5 +26,13 @@ cmake --build .
 
 ## ![ezgif com-gif-maker (4)](https://user-images.githubusercontent.com/13933998/211692760-598cfaef-791f-4559-b5ad-88b0a36c9af1.gif) Result
 
-![ezgif com-gif-maker (7)](https://user-images.githubusercontent.com/13933998/211696545-02ba0861-2b96-4aca-8ee8-93c77b01a4c2.gif)
+Result using a grid of 600 x 800
+
+
+<p align="center">
+  <img src="https://user-images.githubusercontent.com/13933998/212559871-6495246b-f778-489e-ae86-2e4884a4fc91.gif"
+  alt="Game of Life"
+ width=800 height=600/>
+</p>
+
 
