@@ -16,12 +16,13 @@ int main()
     auto columns{200};
     auto percentageOfDeathCells = .96;
 
-    GameOfLife::Internal::Matrix initialStateMatrix{init.createMatrix(rows, columns, percentageOfDeathCells)};
+	GameOfLife::Internal::Matrix initialStateMatrix{ init.createMatrix(rows, columns, percentageOfDeathCells) };
     GameOfLife::Simulator simulator = GameOfLife::Simulator(initialStateMatrix);
-    GameOfLife::OutputHelper *outPPM = new GameOfLife::OutputHelperPPM("out/test");
+	GameOfLife::OutputHelper* outPPM = new GameOfLife::OutputHelperPPM("out/test");
 
-    for (int i{0}; i < 50; i++) {
-        *outPPM << simulator.getCurrentState();
+	for (int i{ 0 }; i < 50; i++) {
+		std::thread t(&GameOfLife::OutputHelper::operator<<, outPPM, simulator.getCurrentState());
+		t.detach();
         simulator.update();
         std::cout << "Frame " << i + 1 << " done." << std::endl;
         std::cout << "--------------------" << std::endl;
