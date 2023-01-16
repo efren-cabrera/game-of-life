@@ -1,7 +1,6 @@
 #include <vector>
 #include <Matrix.hpp>
 #include <array>
-#include <stdexcept>
 
 namespace GameOfLife::Internal
 {
@@ -12,12 +11,11 @@ namespace GameOfLife::Internal
 	};
 	const int Matrix::at(const int& row, const int& column) const
 	{
-		try {
-			return m_matrix.at(row).at(column);
-		}
-		catch (const std::out_of_range& oor) {
+		if (row < 0 || column < 0 || row >= size.first || column >= size.second)
+		{
 			return 0;
 		}
+		return m_matrix.at(row).at(column);
 	}
 	const std::vector<std::vector<int>> Matrix::getData() const
 	{
