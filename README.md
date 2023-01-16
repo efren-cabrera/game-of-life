@@ -35,4 +35,19 @@ Result using a grid of 600 x 800
  width=800 height=600/>
 </p>
 
+### Some common patterns
 
+<p align="center">
+  <img src="https://user-images.githubusercontent.com/13933998/212586435-d6c47e19-b173-4bee-8095-ca306fe85286.gif"
+  alt="Game of Life"
+ width=30 height=40/>
+ <img src="https://user-images.githubusercontent.com/13933998/212586888-2cb6d153-98b6-4ec3-a788-ec6f1d07a185.gif"
+  alt="Game of Life"
+ width=30 height=40/>
+ <img src="https://user-images.githubusercontent.com/13933998/212587135-3e66d2a2-736d-4b5e-85ca-7cb58b8c233a.gif"
+  alt="Game of Life"
+ width=30 height=40/>
+ <img src="https://user-images.githubusercontent.com/13933998/212587590-64da714f-945b-4f71-ae0a-73f73b5d0567.gif"
+  alt="Game of Life"
+ width=30 height=40/>
+</p>
